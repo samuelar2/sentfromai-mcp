@@ -7,7 +7,16 @@ MCP host) email as native tools: create inboxes, send, reply, forward, search,
 read threads, manage drafts, custom domains, webhooks, and allow/block rules —
 21 tools, each a thin wrapper over the [SentVia REST API](https://docs.sentvia.ai/api-reference/introduction).
 
-## Setup
+## Let your agent install it
+
+Paste this into your agent (OpenClaw, Claude Code, any MCP-capable agent):
+
+```text
+Set up SentVia email for yourself: fetch https://docs.sentvia.ai/agent-install.md
+and follow it. Ask me for the API key when you need it.
+```
+
+## Manual setup
 
 You need a SentVia API key (`sv_live_…`) from the [dashboard](https://console.sentvia.ai).
 
