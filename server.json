@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ai.sentvia/mcp",
-  "description": "Email for AI agents: create inboxes, send/reply/forward, search, threads, drafts, custom domains, webhooks, and allow/block rules — 21 tools over the SentVia API.",
+  "description": "Email for AI agents: inboxes, send/reply/forward, search, threads, webhooks — 21 SentVia tools.",
   "repository": {
     "url": "https://github.com/samuelar2/sentvia-mcp",
     "source": "github"
