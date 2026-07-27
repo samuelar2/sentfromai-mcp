@@ -1,0 +1,37 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.sentvia/mcp",
+  "description": "Email for AI agents: create inboxes, send/reply/forward, search, threads, drafts, custom domains, webhooks, and allow/block rules — 21 tools over the SentVia API.",
+  "repository": {
+    "url": "https://github.com/samuelar2/sentvia-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://docs.sentvia.ai/guides/mcp",
+  "version": "0.2.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "sentvia-mcp",
+      "version": "0.2.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SENTVIA_API_KEY",
+          "description": "SentVia API key (sv_live_…) from https://console.sentvia.ai",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true
+        },
+        {
+          "name": "SENTVIA_BASE_URL",
+          "description": "Override the API base URL (default https://api.sentvia.ai)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
