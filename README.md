@@ -1,29 +1,29 @@
-# sentvia-mcp
+# sentfromai-mcp
 
-MCP server for [SentVia](https://sentvia.ai) — email infrastructure for AI agents.
+MCP server for [SentFromAI](https://sentfrom.ai) — email infrastructure for AI agents.
 
 Gives any MCP-capable agent (Claude Code, Claude Desktop, OpenClaw, or your own
 MCP host) email as native tools: create inboxes, send, reply, forward, search,
 read threads, manage drafts, custom domains, webhooks, and allow/block rules —
-21 tools, each a thin wrapper over the [SentVia REST API](https://docs.sentvia.ai/api-reference/introduction).
+21 tools, each a thin wrapper over the [SentFromAI REST API](https://docs.sentfrom.ai/api-reference/introduction).
 
 ## Let your agent install it
 
 Paste this into your agent (OpenClaw, Claude Code, any MCP-capable agent):
 
 ```text
-Set up SentVia email for yourself: fetch https://docs.sentvia.ai/agent-install.md
+Set up SentFromAI email for yourself: fetch https://docs.sentfrom.ai/agent-install.md
 and follow it. Ask me for the API key when you need it.
 ```
 
 ## Manual setup
 
-You need a SentVia API key (`sv_live_…`) from the [dashboard](https://console.sentvia.ai).
+You need a SentFromAI API key (`sf_live_…`) from the [dashboard](https://console.sentfrom.ai).
 
 **Claude Code**
 
 ```bash
-claude mcp add sentvia --env SENTVIA_API_KEY=sv_live_… -- npx -y sentvia-mcp
+claude mcp add sentfromai --env SENTFROMAI_API_KEY=sf_live_… -- npx -y sentfromai-mcp
 ```
 
 **Claude Desktop / any JSON-config MCP host**
@@ -31,10 +31,10 @@ claude mcp add sentvia --env SENTVIA_API_KEY=sv_live_… -- npx -y sentvia-mcp
 ```json
 {
   "mcpServers": {
-    "sentvia": {
+    "sentfromai": {
       "command": "npx",
-      "args": ["-y", "sentvia-mcp"],
-      "env": { "SENTVIA_API_KEY": "sv_live_…" }
+      "args": ["-y", "sentfromai-mcp"],
+      "env": { "SENTFROMAI_API_KEY": "sf_live_…" }
     }
   }
 }
@@ -43,11 +43,11 @@ claude mcp add sentvia --env SENTVIA_API_KEY=sv_live_… -- npx -y sentvia-mcp
 **OpenClaw**
 
 ```bash
-openclaw mcp add sentvia --command npx --arg -y --arg sentvia-mcp
+openclaw mcp add sentfromai --command npx --arg -y --arg sentfromai-mcp
 ```
 
-then add `SENTVIA_API_KEY` to the server's `env` in `~/.openclaw/openclaw.json`.
-Full guide: [docs.sentvia.ai/frameworks/openclaw](https://docs.sentvia.ai/frameworks/openclaw).
+then add `SENTFROMAI_API_KEY` to the server's `env` in `~/.openclaw/openclaw.json`.
+Full guide: [docs.sentfrom.ai/frameworks/openclaw](https://docs.sentfrom.ai/frameworks/openclaw).
 
 ## Tools
 
@@ -69,11 +69,11 @@ idempotency and suppression rules as the REST API.
 
 | Env var | Required | Default |
 | --- | --- | --- |
-| `SENTVIA_API_KEY` | yes | — |
-| `SENTVIA_BASE_URL` | no | `https://api.sentvia.ai` |
+| `SENTFROMAI_API_KEY` | yes | — |
+| `SENTFROMAI_BASE_URL` | no | `https://api.sentfrom.ai` |
 
 ## Docs
 
-- [MCP guide](https://docs.sentvia.ai/guides/mcp)
-- [API reference](https://docs.sentvia.ai/api-reference/introduction)
-- [SentVia for agents](https://docs.sentvia.ai/for-agents)
+- [MCP guide](https://docs.sentfrom.ai/guides/mcp)
+- [API reference](https://docs.sentfrom.ai/api-reference/introduction)
+- [SentFromAI for agents](https://docs.sentfrom.ai/for-agents)

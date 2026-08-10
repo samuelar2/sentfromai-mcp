@@ -1,32 +1,32 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "ai.sentvia/mcp",
-  "description": "Email for AI agents: inboxes, send/reply/forward, search, threads, webhooks — 21 SentVia tools.",
+  "name": "ai.sentfrom/mcp",
+  "description": "Email for AI agents: inboxes, send/reply/forward, search, threads, webhooks \u2014 21 SentFromAI tools.",
   "repository": {
-    "url": "https://github.com/samuelar2/sentvia-mcp",
+    "url": "https://github.com/samuelar2/sentfromai-mcp",
     "source": "github"
   },
-  "websiteUrl": "https://docs.sentvia.ai/guides/mcp",
-  "version": "0.2.1",
+  "websiteUrl": "https://docs.sentfrom.ai/guides/mcp",
+  "version": "0.3.0",
   "packages": [
     {
       "registryType": "npm",
-      "identifier": "sentvia-mcp",
-      "version": "0.2.1",
+      "identifier": "sentfromai-mcp",
+      "version": "0.3.0",
       "transport": {
         "type": "stdio"
       },
       "environmentVariables": [
         {
-          "name": "SENTVIA_API_KEY",
-          "description": "SentVia API key (sv_live_…) from https://console.sentvia.ai",
+          "name": "SENTFROMAI_API_KEY",
+          "description": "SentFromAI API key (sf_live_\u2026) from https://console.sentfrom.ai",
           "isRequired": true,
           "format": "string",
           "isSecret": true
         },
         {
-          "name": "SENTVIA_BASE_URL",
-          "description": "Override the API base URL (default https://api.sentvia.ai)",
+          "name": "SENTFROMAI_BASE_URL",
+          "description": "Override the API base URL (default https://api.sentfrom.ai)",
           "isRequired": false,
           "format": "string",
           "isSecret": false

@@ -1,11 +1,11 @@
 {
-  "name": "sentvia-mcp",
-  "version": "0.2.1",
-  "mcpName": "ai.sentvia/mcp",
-  "description": "MCP server for SentVia — email infrastructure for AI agents. Create inboxes, send and reply, search, manage threads, webhooks and allow/block rules as native agent tools.",
+  "name": "sentfromai-mcp",
+  "version": "0.3.0",
+  "mcpName": "ai.sentfrom/mcp",
+  "description": "MCP server for SentFromAI \u2014 email infrastructure for AI agents. Create inboxes, send and reply, search, manage threads, webhooks and allow/block rules as native agent tools.",
   "type": "module",
   "bin": {
-    "sentvia-mcp": "server.js"
+    "sentfromai-mcp": "server.js"
   },
   "files": [
     "server.js",
@@ -19,20 +19,20 @@
     "email-api",
     "ai-agents",
     "agent-tools",
-    "sentvia",
+    "sentfromai",
     "claude",
     "openclaw",
     "inbox",
     "smtp",
     "transactional-email"
   ],
-  "homepage": "https://docs.sentvia.ai/guides/mcp",
+  "homepage": "https://docs.sentfrom.ai/guides/mcp",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samuelar2/sentvia-mcp.git"
+    "url": "git+https://github.com/samuelar2/sentfromai-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/samuelar2/sentvia-mcp/issues"
+    "url": "https://github.com/samuelar2/sentfromai-mcp/issues"
   },
   "license": "MIT",
   "dependencies": {

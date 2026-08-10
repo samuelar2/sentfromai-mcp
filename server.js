@@ -1,22 +1,22 @@
 #!/usr/bin/env node
-// SentVia MCP server — the agent-native distribution channel. Every tool is one
+// SentFromAI MCP server — the agent-native distribution channel. Every tool is one
 // authenticated HTTP call to the REST API; no business logic or DB access here,
-// which keeps SentVia portable (swap the backend, keep the MCP surface).
+// which keeps SentFromAI portable (swap the backend, keep the MCP surface).
 //
-// Config via env: SENTVIA_API_KEY (required — a tenant bearer token),
-// SENTVIA_BASE_URL (default https://api.sentvia.ai).
+// Config via env: SENTFROMAI_API_KEY (required — a tenant bearer token),
+// SENTFROMAI_BASE_URL (default https://api.sentfrom.ai).
 import { Server } from '@modelcontextprotocol/sdk/server/index.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js'
 
-const BASE_URL = process.env.SENTVIA_BASE_URL ?? 'https://api.sentvia.ai'
-const API_KEY = process.env.SENTVIA_API_KEY ?? ''
+const BASE_URL = process.env.SENTFROMAI_BASE_URL ?? 'https://api.sentfrom.ai'
+const API_KEY = process.env.SENTFROMAI_API_KEY ?? ''
 
 if (!API_KEY) {
   console.error(
-    'sentvia-mcp: SENTVIA_API_KEY is not set.\n' +
-      'Get an API key at https://console.sentvia.ai and set it in the `env` of your MCP config.\n' +
-      'Docs: https://docs.sentvia.ai/guides/mcp',
+    'sentfromai-mcp: SENTFROMAI_API_KEY is not set.\n' +
+      'Get an API key at https://console.sentfrom.ai and set it in the `env` of your MCP config.\n' +
+      'Docs: https://docs.sentfrom.ai/guides/mcp',
   )
   process.exit(1)
 }
@@ -28,7 +28,7 @@ async function api(method, path, body) {
     body: body === undefined ? undefined : JSON.stringify(body),
   })
   const text = await res.text()
-  if (!res.ok) throw new Error(`sentvia ${method} ${path} -> ${res.status}: ${text}`)
+  if (!res.ok) throw new Error(`sentfromai ${method} ${path} -> ${res.status}: ${text}`)
   return text ? JSON.parse(text) : null
 }
 
@@ -36,7 +36,7 @@ const TOOLS = [
   // ── Inboxes ──────────────────────────────────────────────────────────────
   {
     name: 'create_inbox',
-    description: 'Create a new email inbox. Defaults to the managed mail.sentvia.ai domain.',
+    description: 'Create a new email inbox. Defaults to the managed mail.sentfrom.ai domain.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -269,7 +269,7 @@ const TOOLS = [
   },
 ]
 
-const server = new Server({ name: 'sentvia', version: '0.2.1' }, { capabilities: { tools: {} } })
+const server = new Server({ name: 'sentfromai', version: '0.2.1' }, { capabilities: { tools: {} } })
 
 server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS }))
 
